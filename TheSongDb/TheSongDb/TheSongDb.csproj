@@ -220,17 +220,14 @@
     <Compile Include="Models\Friend.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\FriendRequestViewModel.cs" />
     <Compile Include="ViewModels\MusicViewModel.cs" />
-
     <Compile Include="Models\Top10\Artist.cs" />
     <Compile Include="Models\Top10\Attr.cs" />
     <Compile Include="Models\Top10\Artists.cs" />
     <Compile Include="Models\Top10\RootObject.cs" />
-
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -289,22 +286,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-
     <Content Include="Views\Music\Top10.cshtml" />
     <Content Include="Views\Music\ArtistInfo.cshtml" />
-
     <Content Include="Views\Friend\Delete.cshtml" />
     <Content Include="Views\Friend\Index.cshtml" />
-
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Artist\" />
-
-    <Folder Include="Views\Friend\" />
-
-    <Folder Include="Views\Music\" />
-
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>

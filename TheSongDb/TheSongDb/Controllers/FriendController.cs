@@ -76,7 +76,7 @@ namespace TheSongDb.Controllers
             var viewModel = new FriendRequestViewModel
             {
 
-                Friend = friend
+                Friend = friend,
 
                 Friend = friend,
                 User = _context.Users.ToList()

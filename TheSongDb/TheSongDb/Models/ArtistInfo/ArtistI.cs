@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TheSongDb.Models.ArtistInfo
 {
-    public class ArtistI : IEnumerator<ArtistI>
+    public class ArtistI 
     {
         public string name { get; set; }
         public string mbid { get; set; }
