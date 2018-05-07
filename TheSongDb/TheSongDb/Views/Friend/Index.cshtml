@@ -18,6 +18,7 @@ else
         {
         <tr>
             <td>@friend.friend2</td>
+            <td>@Html.ActionLink("Delete", "Delete", "Friend", new { id = friend.friendId }, null)</td>
         </tr>
         }
     </table>
