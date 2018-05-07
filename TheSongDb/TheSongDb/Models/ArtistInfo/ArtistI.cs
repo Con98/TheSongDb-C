@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,6 +18,25 @@ namespace TheSongDb.Models.ArtistInfo
         public Similar similar { get; set; }
         public Tags tags { get; set; }
         public Bio bio { get; set; }
+
+        public ArtistI Current => throw new NotImplementedException();
+
+        object IEnumerator.Current => throw new NotImplementedException();
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool MoveNext()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Reset()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
