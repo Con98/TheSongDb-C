@@ -49,7 +49,7 @@ namespace TheSongDb.Controllers
             var viewModel = new FriendRequestViewModel
             {
                 Friend = friend,
-                User = UserFriend
+                
             };
 
             return View(viewModel);
@@ -69,8 +69,7 @@ namespace TheSongDb.Controllers
 
             var viewModel = new FriendRequestViewModel
             {
-                Friend = friend,
-                User = _context.users.ToList()
+                Friend = friend
             };
             return View("Delete", viewModel);
         }

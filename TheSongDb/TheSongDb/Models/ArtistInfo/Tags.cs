@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using TheSongDb.Models;
 
-namespace TheSongDb.ViewModels
+namespace TheSongDb.Models.ArtistInfo
 {
-    public class MusicViewModel
+    public class Tags
     {
-  
+        public List<Tag> tag { get; set; }
     }
 }

@@ -58,11 +58,11 @@ namespace TheSongDb
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "693431970876-h450ipm1achthjh5cltsdeojghv2l9hs.apps.googleusercontent.com",
+                ClientSecret = "AOKA8YkcsaPc1FO-BCO98LoM"
+            });
         }
     }
 }

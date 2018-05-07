@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TheSongDb.Models
+namespace TheSongDb.Models.ArtistInfo
 {
-
-    public class RootObject
+    public class Links
     {
-        public Artists artists { get; set; }
+        public Link link { get; set; }
     }
+
 }

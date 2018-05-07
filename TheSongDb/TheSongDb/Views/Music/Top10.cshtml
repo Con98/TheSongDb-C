@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TheSongDb.Controllers.Artist>
+﻿@model IEnumerable<TheSongDb.Models.Top10.Artist>
 
 @{
     ViewBag.Title = "Top10";
@@ -35,7 +35,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.name)
+            @Html.ActionLink(item.name, "ArtistInfo", "Music", new { name = item.name }, null)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.playcount)
@@ -54,7 +54,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TheSongDb.Models
+namespace TheSongDb.Models.Top10
 {
     public class Artist
     {
@@ -13,6 +13,6 @@ namespace TheSongDb.Models
         public string mbid { get; set; }
         public string url { get; set; }
         public string streamable { get; set; }
-        public List<Image> image { get; set; }
+
     }
 }

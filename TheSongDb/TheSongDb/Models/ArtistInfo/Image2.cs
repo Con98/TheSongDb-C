@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TheSongDb.Models
+namespace TheSongDb.Models.ArtistInfo
 {
-    public class Image
+    public class Image2
     {
-        public string size { get; set; }
         public string text { get; set; }
-        
+        public string size { get; set; }
     }
 }

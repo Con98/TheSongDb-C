@@ -11,15 +11,34 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using TheSongDb.Models;
-
+using Twilio;
 namespace TheSongDb
 {
     public class EmailService : IIdentityMessageService
     {
+        public static class Keys
+        {
+            public static string SMSAccountIdentification = "ACbc1aa964d0b315fe4bf1ec836e8fdb73";
+            public static string SMSAccountPassword = "d9575771c23a792065cb41400ecf79f3";
+            public static string SMSAccountFrom = "+353861802131";
+        }
+
         public Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
+            // Twilio Begin
+            var Twilio = new TwilioRestClient(
+              Keys.SMSAccountIdentification,
+              Keys.SMSAccountPassword);
+            var result = Twilio.SendMessage(
+              Keys.SMSAccountFrom,
+              message.Destination, message.Body
+        );
+            // Status is one of Queued, Sending, Sent, Failed or null if the number is not valid
+            //Trace.TraceInformation(result.Status);
+            // Twilio doesn't currently have an async API, so return success.
             return Task.FromResult(0);
+            // Twilio End
+
         }
     }
 
