@@ -54,7 +54,7 @@ namespace TheSongDb.Controllers
         public async Task<ActionResult> ArtistInfo(string name)
         {
             ArtistI a = new ArtistI();
-            Image i = new Image();
+            
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(BaseUrl);

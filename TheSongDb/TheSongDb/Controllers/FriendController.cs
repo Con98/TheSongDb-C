@@ -75,12 +75,12 @@ namespace TheSongDb.Controllers
 
             var viewModel = new FriendRequestViewModel
             {
-<<<<<<< HEAD
+
                 Friend = friend
-=======
+
                 Friend = friend,
                 User = _context.Users.ToList()
->>>>>>> a64e8acd1b4242ff2576d191a6c4ad1cda7e3bf5
+
             };
             return View("Delete", viewModel);
         }
