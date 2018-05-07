@@ -43,10 +43,10 @@ namespace TheSongDb.Controllers
             return View(friend);
         }
 
-        private IJEnumerable<User> GetUsers()
+        /*private IJEnumerable<User> GetUsers()
         {
             return new List<User> { };
-        }
+        }*/
 
         public ActionResult New()
         {
@@ -61,7 +61,7 @@ namespace TheSongDb.Controllers
             return View(viewModel);
         }
 
-        public ActionResult Delete(int? id)
+        /*public ActionResult Delete(int? id)
         {
             if(id == null)
             {
@@ -76,14 +76,18 @@ namespace TheSongDb.Controllers
             var viewModel = new FriendRequestViewModel
             {
 
+<<<<<<< HEAD
                 Friend = friend,
+=======
+
+>>>>>>> bc430a233d49c3cb489fe7a0c7c68e1d0cd643d7
 
                 Friend = friend,
                 User = _context.Users.ToList()
 
             };
             return View("Delete", viewModel);
-        }
+        }*/
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
