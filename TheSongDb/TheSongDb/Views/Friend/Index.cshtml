@@ -1,0 +1,25 @@
+﻿@model IEnumerable<TheSongDb.Models.Friend>
+
+@{ 
+    ViewBag.Title = "Friends";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Friends</h2>
+@if (!Model.Any())
+{
+    <p>Sorry but you have no friends :(</p>
+}
+
+else
+{
+    <table class="table table-bordered table-hover">
+        @foreach (var friend in Model)
+        {
+        <tr>
+            <td>@friend.friend2</td>
+            <td>@Html.ActionLink("Delete", "Delete", "Friend", new { id = friend.friendId }, null)</td>
+        </tr>
+        }
+    </table>
+}

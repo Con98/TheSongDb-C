@@ -225,10 +225,13 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\FriendRequestViewModel.cs" />
     <Compile Include="ViewModels\MusicViewModel.cs" />
+<<<<<<< HEAD
     <Compile Include="Models\Top10\Artist.cs" />
     <Compile Include="Models\Top10\Attr.cs" />
     <Compile Include="Models\Top10\Artists.cs" />
     <Compile Include="Models\Top10\RootObject.cs" />
+=======
+>>>>>>> a64e8acd1b4242ff2576d191a6c4ad1cda7e3bf5
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -287,13 +290,22 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Music\Top10.cshtml" />
     <Content Include="Views\Music\ArtistInfo.cshtml" />
+=======
+    <Content Include="Views\Friend\Delete.cshtml" />
+    <Content Include="Views\Friend\Index.cshtml" />
+>>>>>>> a64e8acd1b4242ff2576d191a6c4ad1cda7e3bf5
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Artist\" />
+<<<<<<< HEAD
     <Folder Include="Views\Friend\" />
+=======
+    <Folder Include="Views\Music\" />
+>>>>>>> a64e8acd1b4242ff2576d191a6c4ad1cda7e3bf5
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>

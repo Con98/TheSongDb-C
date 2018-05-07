@@ -7,6 +7,7 @@ using TheSongDb.Models;
 using TheSongDb.ViewModels;
 using System.Data.Entity;
 using System.Net;
+using Newtonsoft.Json.Linq;
 
 namespace TheSongDb.Controllers
 {
@@ -42,9 +43,14 @@ namespace TheSongDb.Controllers
             return View(friend);
         }
 
+        private IJEnumerable<User> GetUsers()
+        {
+            return new List<User> { };
+        }
+
         public ActionResult New()
         {
-            var UserFriend = _context.users.ToList();
+            var UserFriend = _context.Users.ToList();
             var friend = new Friend();
             var viewModel = new FriendRequestViewModel
             {
@@ -69,7 +75,12 @@ namespace TheSongDb.Controllers
 
             var viewModel = new FriendRequestViewModel
             {
+<<<<<<< HEAD
                 Friend = friend
+=======
+                Friend = friend,
+                User = _context.Users.ToList()
+>>>>>>> a64e8acd1b4242ff2576d191a6c4ad1cda7e3bf5
             };
             return View("Delete", viewModel);
         }
