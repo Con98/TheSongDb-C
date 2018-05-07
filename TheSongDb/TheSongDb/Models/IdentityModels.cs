@@ -29,5 +29,8 @@ namespace TheSongDb.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Friend> Friends { get; set; }
+        public DbSet<User> users { get; set; }
     }
 }

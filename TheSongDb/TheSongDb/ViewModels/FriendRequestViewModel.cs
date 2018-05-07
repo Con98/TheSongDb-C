@@ -6,8 +6,9 @@ using TheSongDb.Models;
 
 namespace TheSongDb.ViewModels
 {
-    public class UserFormViewModel
+    public class FriendRequestViewModel
     {
         public User User { get; set; }
+        public Friend Friend { get; set; }
     }
 }
