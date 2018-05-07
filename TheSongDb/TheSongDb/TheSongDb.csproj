@@ -204,6 +204,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805072211002_initialMigration.cs" />
+    <Compile Include="Migrations\201805072211002_initialMigration.Designer.cs">
+      <DependentUpon>201805072211002_initialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ArtistInfo\Stats.cs" />
     <Compile Include="Models\ArtistInfo\Similar.cs" />
@@ -217,6 +222,8 @@
     <Compile Include="Models\ArtistInfo\Artist2.cs" />
     <Compile Include="Models\ArtistInfo\Image2.cs" />
     <Compile Include="Models\ArtistInfo\Image.cs" />
+    <Compile Include="Models\Message.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Models\Friend.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -225,12 +232,10 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\FriendRequestViewModel.cs" />
     <Compile Include="ViewModels\MusicViewModel.cs" />
-
     <Compile Include="Models\Top10\Artist.cs" />
     <Compile Include="Models\Top10\Attr.cs" />
     <Compile Include="Models\Top10\Artists.cs" />
     <Compile Include="Models\Top10\RootObject.cs" />
-
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -289,22 +294,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-
     <Content Include="Views\Music\Top10.cshtml" />
     <Content Include="Views\Music\ArtistInfo.cshtml" />
-
     <Content Include="Views\Friend\Delete.cshtml" />
     <Content Include="Views\Friend\Index.cshtml" />
-
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Artist\" />
-
-    <Folder Include="Views\Friend\" />
-
-    <Folder Include="Views\Music\" />
-
     <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
@@ -319,6 +316,11 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805072211002_initialMigration.resx">
+      <DependentUpon>201805072211002_initialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

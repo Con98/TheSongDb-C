@@ -32,5 +32,7 @@ namespace TheSongDb.Models
 
         public DbSet<Friend> Friends { get; set; }
         //public DbSet<User> Users { get; set; }
+        public DbSet<Status> Statuses { get; set; }
+        public DbSet<Message> Messages { get; set; }
     }
 }
