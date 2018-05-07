@@ -15,9 +15,10 @@ else
 {
     <table class="table table-bordered table-hover">
         @foreach (var friend in Model)
+        {
         <tr>
-            <td>@friend.User.userId</td>
-            <td>@Html.ActionLink("Delete", "Delete", "Friend", new { id = User.id }, null)</td>
+            <td>@friend.friend2</td>
         </tr>
+        }
     </table>
 }

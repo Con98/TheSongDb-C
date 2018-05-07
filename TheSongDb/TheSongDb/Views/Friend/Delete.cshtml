@@ -17,16 +17,6 @@ new SelectList(Model.User, "firstName", "surname", "userName");
             @Html.LabelFor(m => m.User.userName)
             @Html.TextBoxFor(m => m.Friend.friend2)
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(m => m.User.firstName)
-            @Html.TextBoxFor(m => m.User.firstName)
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(m => m.User.surname)
-            @Html.TextBoxFor(m => m.User.surname)
-        </div>
     </fieldset>
     @Html.HiddenFor(m => m.Friend.friendId)
 
