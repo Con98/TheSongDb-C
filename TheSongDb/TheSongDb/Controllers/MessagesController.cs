@@ -47,7 +47,7 @@ namespace TheSongDb.Controllers
         public ActionResult Save(MessageFormViewModel viewModel)
         {
             //viewModel.Message = _context.Messages.FirstOrDefault(g => g.Id == viewModel.Message.Id); //GIVES ERROR
-            viewModel.Message = _context.Messages.First(); //WORKS BUT DOESNT SUBMIT
+            /*viewModel.Message = _context.Messages.First(); //WORKS BUT DOESNT SUBMIT
             if (!ModelState.IsValid)
             {
                 viewModel = new MessageFormViewModel
@@ -62,7 +62,8 @@ namespace TheSongDb.Controllers
             {
                 var messageInDb = _context.Messages.Single(messageT => messageT.Id == viewModel.Message.Id);
                 messageInDb.content = viewModel.Message.content;
-            }
+            }*/
+            _context.Messages.Add(viewModel.Message);
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Messages");
