@@ -11,18 +11,31 @@ namespace TheSongDb.Models.ArtistInfo
         public string name { get; set; }
         public string mbid { get; set; }
         public string url { get; set; }
-        public List<Image> image { get; set; }
-        public string streamable { get; set; }
-        public string ontour { get; set; }
-        public Stats stats { get; set; }
-        public Similar similar { get; set; }
-        public Tags tags { get; set; }
-        public Bio bio { get; set; }
+        public String image { get; set; }
+        public String listeners { get; set; }
+        public String playCount { get; set; }
+        public String bio { get; set; }
 
         public ArtistI Current => throw new NotImplementedException();
 
+<<<<<<< HEAD
+        public ArtistI()
+        {
+=======
         //object IEnumerator.Current => throw new NotImplementedException();
+>>>>>>> 6b316cc9dadac252bd859a8070e5595cd503e330
 
+        }
+        public ArtistI(String name, String mbid, String url, String image, String listeners, String playcount, String bio)
+        {
+            this.name = name;
+            this.mbid = mbid;
+            this.url = url;
+            this.image = image;
+            this.listeners = listeners;
+            this.playCount = playCount;
+            this.bio = bio;
+        }
         public void Dispose()
         {
             throw new NotImplementedException();

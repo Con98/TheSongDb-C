@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 using TheSongDb.Models.ArtistInfo;
 using TheSongDb.Models.Top10;
@@ -53,8 +54,8 @@ namespace TheSongDb.Controllers
 
         public async Task<ActionResult> ArtistInfo(string name)
         {
+
             ArtistI a = new ArtistI();
-            
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(BaseUrl);
@@ -67,22 +68,26 @@ namespace TheSongDb.Controllers
                 if (Res.IsSuccessStatusCode)
                 {
                     //Storing the response details recieved from web api   
-                    var EmpResponse = Res.Content.ReadAsStringAsync().Result;
+                    String jsonString = Res.Content.ReadAsStringAsync().Result;
 
+                    var jo = JObject.Parse(jsonString);
+                    //Getting name, mbid, url
+                    String aName = jo["artist"]["name"].ToString();
+                    String aMbid = jo["artist"]["mbid"].ToString();
+                    String aUrl = jo["artist"]["url"].ToString();
+                    //Getting image (Large)
+                    String im = jo["artist"]["image"].ToString();
+                    var ja = JArray.Parse(im);
+                    var imSize = ja[3].ToString();
+                    var imObj = JObject.Parse(imSize);
+                    String imageUrl = imObj["#text"].ToString();
+                    //Getting Stats
+                    String aListeners = jo["artist"]["stats"]["listeners"].ToString();
+                    String aPlaycount = jo["artist"]["stats"]["playcount"].ToString();
+                    //Getting Bio
+                    String aBio = jo["artist"]["bio"]["summary"].ToString();
 
-                    //Deserializing the response recieved from web api and storing into the Employee list 
-                    var temp = new RootObjectArtist();
-                    temp = JsonConvert.DeserializeObject<RootObjectArtist>(EmpResponse);
-
-                    var myArtists = temp.artist;
-                    var aImage = temp.artist.image;
-                    
-                    a.image = aImage;
-                    a = myArtists;
-
-                    
-                    
-
+                     a = new ArtistI(aName, aMbid, aUrl, imageUrl, aListeners, aPlaycount, aBio);
                 }
             }
             return View(a);

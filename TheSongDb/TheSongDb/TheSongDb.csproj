@@ -196,8 +196,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+<<<<<<< HEAD
+=======
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\FriendController.cs" />
+>>>>>>> 6b316cc9dadac252bd859a8070e5595cd503e330
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MusicController.cs" />
@@ -229,13 +232,15 @@
     <Compile Include="Models\ArtistInfo\Image.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Status.cs" />
-    <Compile Include="Models\Friend.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+<<<<<<< HEAD
+=======
     <Compile Include="ViewModels\MessageFormViewModel.cs" />
     <Compile Include="ViewModels\FriendRequestViewModel.cs" />
+>>>>>>> 6b316cc9dadac252bd859a8070e5595cd503e330
     <Compile Include="ViewModels\MusicViewModel.cs" />
     <Compile Include="Models\Top10\Artist.cs" />
     <Compile Include="Models\Top10\Attr.cs" />
@@ -300,11 +305,14 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Music\Top10.cshtml" />
-    <Content Include="Views\Music\ArtistInfo.cshtml" />
     <Content Include="Views\Friend\Delete.cshtml" />
     <Content Include="Views\Friend\Index.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Views\Music\ArtistInfo.cshtml" />
+=======
     <Content Include="Views\Messages\Index.cshtml" />
     <Content Include="Views\Messages\New.cshtml" />
+>>>>>>> 6b316cc9dadac252bd859a8070e5595cd503e330
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
