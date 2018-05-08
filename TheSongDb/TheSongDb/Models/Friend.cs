@@ -13,7 +13,7 @@ namespace TheSongDb.Models
     public class Friend
     {
         public int friendId { get; set; }
-        public User User { get; set; }
+        //public User User { get; set; }
         public String friend1 { get; set; }
         public String friend2 { get; set; }
     }

@@ -21,7 +21,7 @@ namespace TheSongDb.Models.ArtistInfo
 
         public ArtistI Current => throw new NotImplementedException();
 
-        object IEnumerator.Current => throw new NotImplementedException();
+        //object IEnumerator.Current => throw new NotImplementedException();
 
         public void Dispose()
         {
