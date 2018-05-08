@@ -73,7 +73,7 @@ namespace TheSongDb.Controllers
                     var jo = JObject.Parse(jsonString);
                     //Getting name, mbid, url
                     String aName = jo["artist"]["name"].ToString();
-                    String aMbid = jo["artist"]["mbid"].ToString();
+                    
                     String aUrl = jo["artist"]["url"].ToString();
                     //Getting image (Large)
                     String im = jo["artist"]["image"].ToString();
@@ -87,12 +87,14 @@ namespace TheSongDb.Controllers
                     //Getting Bio
                     String aBio = jo["artist"]["bio"]["summary"].ToString();
 
-                     a = new ArtistI(aName, aMbid, aUrl, imageUrl, aListeners, aPlaycount, aBio);
+                     a = new ArtistI(aName, aUrl, imageUrl, aListeners, aPlaycount, aBio);
                 }
             }
             return View(a);
 
         }
+
+
 
     }
 

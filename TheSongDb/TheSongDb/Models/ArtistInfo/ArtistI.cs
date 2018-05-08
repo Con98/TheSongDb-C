@@ -26,10 +26,10 @@ namespace TheSongDb.Models.ArtistInfo
 
 
         }
-        public ArtistI(String name, String mbid, String url, String image, String listeners, String playcount, String bio)
+        public ArtistI(String name, String url, String image, String listeners, String playCount, String bio)
         {
             this.name = name;
-            this.mbid = mbid;
+            
             this.url = url;
             this.image = image;
             this.listeners = listeners;
