@@ -46,12 +46,29 @@ namespace TheSongDb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(MessageFormViewModel viewModel)
         {
-            var messageInDb = _context.Messages.Single(messageM => messageM.Id == viewModel.Message.Id);
-            messageInDb.content = viewModel.Message.content;
+            //viewModel.Message = _context.Messages.FirstOrDefault(g => g.Id == viewModel.Message.Id); //GIVES ERROR
+            viewModel.Message = _context.Messages.First(); //WORKS BUT DOESNT SUBMIT
+            if (!ModelState.IsValid)
+            {
+                viewModel = new MessageFormViewModel
+                {
+                    Message = viewModel.Message
+                };
+                return View("New", viewModel);
+            }
+            if (viewModel.Message.Id == 0)
+                _context.Messages.Add(viewModel.Message);
+            else
+            {
+                var messageInDb = _context.Messages.Single(messageT => messageT.Id == viewModel.Message.Id);
+                messageInDb.content = viewModel.Message.content;
+            }
             _context.SaveChanges();
-            return RedirectToAction("Index", "Messages");
-        }
 
+            return RedirectToAction("Index", "Messages");
+
+        }
     }
 }
+
         
