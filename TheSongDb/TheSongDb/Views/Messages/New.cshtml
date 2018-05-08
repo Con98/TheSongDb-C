@@ -1,0 +1,28 @@
+﻿@model TheSongDb.ViewModels.MessageFormViewModel
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New</h2>
+</div>
+@using (Html.BeginForm("Send", "Message"))
+{
+    @Html.ValidationSummary(true, "Please fix the following errors")
+    <div class="form-group">
+        @Html.LabelFor(m => m.Message.content)
+        @Html.TextBoxFor(m => m.Message.content, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Message.content)
+    </div>
+
+    @Html.HiddenFor(m => m.Message.Id)
+    @Html.AntiForgeryToken()
+
+    <button type="submit" class="btn btn-primary">Send</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
