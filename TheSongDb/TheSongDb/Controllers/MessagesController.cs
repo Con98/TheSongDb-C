@@ -19,7 +19,7 @@ namespace TheSongDb.Controllers
         }
         protected override void Dispose(bool disposing)
         {
-            base.Dispose();
+            base.Dispose(disposing);
         }
 
         public ActionResult Index()
@@ -42,6 +42,15 @@ namespace TheSongDb.Controllers
             return View(ViewModel);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Save(MessageFormViewModel viewModel)
+        {
+            var messageInDb = _context.Messages.Single(messageM => messageM.Id == viewModel.Message.Id);
+            messageInDb.content = viewModel.Message.content;
+            _context.SaveChanges();
+            return RedirectToAction("Index", "Messages");
+        }
 
     }
 }
