@@ -69,6 +69,33 @@ namespace TheSongDb.Controllers
             return RedirectToAction("Index", "Messages");
 
         }
+
+        public ActionResult Delete(int? id)
+        {
+            if (id==null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Message message = _context.Messages.Find(id);
+            if(message == null)
+            {
+                return HttpNotFound();
+            }
+            var viewModel = new MessageFormViewModel
+            {
+                Message = message
+            };
+            return View("Delete", viewModel);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Message message = _context.Messages.Find(id);
+            _context.Messages.Remove(message);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
 

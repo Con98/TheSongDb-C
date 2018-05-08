@@ -39,6 +39,7 @@ else
             <tr>
                 <th>Message ID</th>
                 <th>Message</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -47,6 +48,7 @@ else
                 <tr>
                     <td>@message.Id</td>
                     <td>@message.content</td>
+                    <td>@Html.ActionLink("Delete", "Delete", "Messages", new { id = message.Id }, null)</td>
                 </tr>
             }
         </tbody>

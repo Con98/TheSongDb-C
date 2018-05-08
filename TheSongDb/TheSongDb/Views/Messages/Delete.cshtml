@@ -1,0 +1,28 @@
+﻿@model TheSongDb.ViewModels.MessageFormViewModel
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Message</h2>
+@using (Html.BeginForm("Delete", "Messages"))
+{
+    <h2>Delete</h2>
+
+    <h3>Are you sure you want to delete this?</h3>
+
+    <fieldset disabled>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Message.content)
+            @Html.TextBoxFor(m => m.Message.content, new { @class = "form-control"})
+        </div>
+    </fieldset>
+    <div class="form-group">
+        <button type="submit" class="btn btn-danger">Delete</button>
+
+        @Html.ActionLink("Back to messages", "Index")
+    </div>
+
+    @Html.HiddenFor(m => m.Message.Id)
+}
+
