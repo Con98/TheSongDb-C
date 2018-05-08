@@ -18,12 +18,12 @@ namespace TheSongDb.Models.ArtistInfo
 
         public ArtistI Current => throw new NotImplementedException();
 
-<<<<<<< HEAD
+
         public ArtistI()
         {
-=======
+
         //object IEnumerator.Current => throw new NotImplementedException();
->>>>>>> 6b316cc9dadac252bd859a8070e5595cd503e330
+
 
         }
         public ArtistI(String name, String mbid, String url, String image, String listeners, String playcount, String bio)
